@@ -5,8 +5,8 @@ module.exports = {
   "driver": "pg",
   "connectionString": process.env.DATABASE_URL + "?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory",
   //"sslmode": process.env.NODE_ENV === "production" ? "require" : "disable"
-  "ssl": {
+  /*"ssl": {
     "require": true,
     "rejectUnauthorized": false
-  }
+  }*/
 }

@@ -10,7 +10,7 @@ const ProductService = {
         return knex 
         .from('kitlab_products')
         .select('*')
-        .where('id', id)
+        .where('product_id', id)
         .first()
     },
     insertProduct(knex, newProduct) {

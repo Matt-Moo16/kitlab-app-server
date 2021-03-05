@@ -56,7 +56,7 @@ setupsRouter
             .catch(next)
     })
     .get(requireAuth, (req, res) => {
-        res.json(SetupService.serializeGifts(res.setup))
+        res.json(SetupService.serializeSetup(res.setup))
     })
     .delete(requireAuth, (req, res, next) => {
         SetupService.deleteSetup(

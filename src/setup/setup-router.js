@@ -8,7 +8,8 @@ const jsonBodyParser = express.json()
 
 setupsRouter
     .route('/')
-    .get(requireAuth, (req, res, next) => {
+    .all(requireAuth)
+    .get((req, res, next) => {
         SetupService.getAllSetups(req.app.get('db'))
         .then(setups => {
             res.json(setups.map(SetupService.serializeSetup))

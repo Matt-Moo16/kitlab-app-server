@@ -4,11 +4,11 @@ const SetupService = {
     getAllSetups(knex) {
         return knex
         .select('*')
-        .from('kitlab_setup')
+        .from('kitlab_setups')
     },
     getById(knex, id) {
         return knex 
-        .from('kitlab_setup')
+        .from('kitlab_setups')
         .select('*')
         .where('id', id)
         .first()
@@ -16,14 +16,14 @@ const SetupService = {
     insertSetup(knex, newSetup) {
         return knex
         .insert(newSetup)
-        .into('kitlab_setup')
+        .into('kitlab_setups')
         .returning('*')
         .then(rows => {
             return rows[0]
         })
     },
     deleteSetup(knex, id) {
-        return knex('kitlab_setup')
+        return knex('kitlab_setups')
         .where('id', id)
         .delete()
     },

@@ -8,7 +8,6 @@ const jsonBodyParser = express.json()
 
 setupsRouter
     .route('/')
-    .all(requireAuth)
     .get((req, res, next) => {
         SetupService.getAllSetups(req.app.get('db'))
         .then(setups => {

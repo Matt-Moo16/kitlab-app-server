@@ -10,7 +10,7 @@ const SetupService = {
         return knex 
         .from('kitlab_setups')
         .select('*')
-        .where('id', id)
+        .where('setup_id', id)
         .first()
     },
     insertSetup(knex, newSetup) {
@@ -24,7 +24,7 @@ const SetupService = {
     },
     deleteSetup(knex, id) {
         return knex('kitlab_setups')
-        .where('id', id)
+        .where('setup_id', id)
         .delete()
     },
     serializeSetup(setup) {

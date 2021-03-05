@@ -1,6 +1,5 @@
 const express = require('express')
 const path = require('path')
-const { hasUserWithUsername } = require('./users-service')
 const UserService = require('./users-service')
 
 const usersRouter = express.Router()
@@ -21,7 +20,7 @@ usersRouter
         if (passwordError)
             return res.status(400).json({ error: passwordError })
         
-        UserService.hasUserWithusername(
+        UserService.hasUserWithUsername(
             req.app.get('db'),
             username
         )
